@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ewilan RPG - Validation de Personnage
 // @namespace    http://ewilanrpg.forumactif.com/
-// @version      0.1
+// @version      0.1a
 // @description  Ajoute les boutons de raccourcis qui permettent de valider un personnage.
 // @updateURL    https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
 // @downloadURL  https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
