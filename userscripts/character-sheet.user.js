@@ -8,7 +8,7 @@
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
 // @resource     archive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/archive.html
-// @resource     inactivce https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/inactivce.html
+// @resource     inactive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/inactive.html
 // @resource     validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/validated.html
 // @resource     welcome https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/welcome.html
 // @grant        GM_setClipboard
