@@ -3,7 +3,8 @@
 // @namespace    http://sanctuary.forumactif.com/
 // @version      0.1
 // @description  Ajoute les boutons de raccourcis qui permettent de valider un personnage.
-// @updateURL    https://github.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.js
+// @updateURL    https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.js
+// @downloadURL  https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.js
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
 // @grant        GM_setClipboard
