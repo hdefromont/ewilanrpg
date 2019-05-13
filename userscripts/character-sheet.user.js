@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Validation de Personnage
-// @namespace    http://sanctuary.forumactif.com/
+// @name         Ewilan RPG - Validation de Personnage
+// @namespace    http://ewilanrpg.forumactif.com/
 // @version      0.1
 // @description  Ajoute les boutons de raccourcis qui permettent de valider un personnage.
-// @updateURL    https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.js
-// @downloadURL  https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.js
+// @updateURL    https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.user.js
+// @downloadURL  https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.user.js
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
 // @grant        GM_setClipboard
@@ -141,7 +141,7 @@
             addToGroup(username, EwilanRPG.groups[groupId]);
             moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.groups[groupId].forum);
 
-            var message = '<fiche><titre>Bienvenue en Gwendalavir</titre><content><block>Cette fiche est officiellement [b]validée[/b], félicitations !<br/><br/>Message personnalisé.</block><block>N\'hésite pas à faire ton <a href="/f39-journaux-de-personnages" target="_blank">journal de personnage</a>. Tu peux également faire une <a href="/t2264-rp-demande" target="_blank">demande de RP</a> et une <a href="/t2262-liens-demande target="_blank">demande de lien</a>.<br/><br/>Enfin, tu peux allez jeter un œil aux <a href="/f53-quetes target="_blank">quêtes</a> en cours !</block><block>Nous restons à ta disposition pour toutes demandes ou questions. Une fois encore bienvenue parmi nous et bon jeu !</block></content></fiche>';
+            var message = '<fiche><titre>Bienvenue en Gwendalavir</titre><content><block>Félicitations @"' + username + '", ta fiche est officiellement [b]validée[/b] !<br/><br/>Message personnalisé.</block><block>N\'hésite pas à faire ton <a href="/f39-journaux-de-personnages" target="_blank">journal de personnage</a>. Tu peux également faire une <a href="/t2264-rp-demande" target="_blank">demande de RP</a> et une <a href="/t2262-liens-demande target="_blank">demande de lien</a>.<br/><br/>Enfin, tu peux allez jeter un œil aux <a href="/f53-quetes target="_blank">quêtes</a> en cours !</block><block>Nous restons à ta disposition pour toutes demandes ou questions. Une fois encore bienvenue parmi nous et bon jeu !</block></content></fiche>';
             postReply(EwilanRPG.getTopicInfos(), message);
         });
 
