@@ -12,3 +12,7 @@
 .mod-buttons button {
 	margin: 2.5px;
 }
+
+.mod-buttons i.material-icons {
+	vertical-align: bottom;
+}
