@@ -1,0 +1,13 @@
+<div class="sheet">
+	<div class="title">Des Nouvelles ?</div>
+	<div class="content">
+		<div class="block">
+			<p>Coucou @"{USERNAME}" !</p>
+			<p>Cela fait déjà deux semaines que tu as posté cette fiche et nous n'avons pas de nouvelles. Nous te donnons un délai supplémentaire d'une semaine, mais passé ce délai, cette fiche sera archivée.</p>
+		</div>
+		<div class="block flex">
+			<div class="icon"><i class="material-icons">help</i></div>
+			<p>N'hésite pas à poser tes questions dans la section des <a href="/f37-questions-et-idees" target="_blank">Questions</a> ou dans le salon [b]#questions[/b] sur Discord. Privilégie ces moyens pour une réponse rapide !</p>
+		</div>
+	</div>
+</div>
