@@ -118,8 +118,8 @@
     	nbReason -= 1;
     }
 
-    if($(".perso").length > 0) {
-        var firstPost = $(".post-wrap").has(".perso");
+    if($(".character").length > 0) {
+        var firstPost = $(".post").has(".character");
         var username = $(firstPost).find(".post-author-name").text();
         var groupId = $(firstPost).find(".data[data-form='groupe']").data("group");
 
@@ -134,7 +134,7 @@
 
         var rejectReasons = '<hr style="margin-bottom:5px"/><form style="padding:5px;text-align:left" id="rejectReasons"><div class="form-group"><label for="message">Message personnalisé :</label><textarea class="form-control" rows="3" name="message" id="message" placeholder="Message personnalisé..."></textarea></div><div class="form-group"><label for="reasons">Ce qu\'il faut corriger :</label><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="sizeAvatar" value="sizeAvatar" /><label class="form-check-label" for="sizeAvatar">La taille de l\'avatar est incorrecte.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="pseudo" value="pseudo" /><label class="form-check-label" for="pseudo">Le pseudo est incorrect.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="wordCount" value="wordCount" /><label class="form-check-label" for="wordCount">Les descriptions sont trop courtes.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="typeAvatar" value="typeAvatar" /><label class="form-check-label" for="typeAvatar">L\'avatar n\'est pas dessiné.</label></div></div><div class="form-group"><label for="other">Autres corrections nécessaires :</label><br/><button class="btn btn-default" onclick="addReason()" style="margin:5px"><i class="material-icons" style="margin:-4px">add</i></button><button class="btn btn-default" onclick="removeReason()" style="margin:5px"><i class="material-icons" style="margin:-4px">remove</i></button></div><ol></ol></form>';
 
-        $(firstPost).find(".post-content").prepend(modButtons);
+        $(firstPost).find(".post-body").prepend(modButtons);
         $(".mod-buttons").append(welcome)
             .append(validate)
             .append(reject)
