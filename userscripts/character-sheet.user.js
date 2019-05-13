@@ -136,11 +136,11 @@
         $("#validate").click(function() {
 			console.log("validate");
 			
-            addToGroup(username, EwilanRPG.groups[groupId]);
-            moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.groups[groupId].forum);
+            addToGroup(username, FA.Group[groupId]);
+            moveTopic(FA.Post.getTopicInfos(), FA.Group[groupId].forum);
 
             var message = GM_getResourceText("message-validated").replace("{USERNAME}", username);
-			FA.Post.postReply(EwilanRPG.getTopicInfos(), message);
+			FA.Post.postReply(FA.Post.getTopicInfos(), message);
         });
 
         // Message de Bienvenue
@@ -148,7 +148,7 @@
 			console.log("welcome");
 			
             var message = GM_getResourceText("message-welcome").replace("{USERNAME}", username);
-            FA.Post.postReply(EwilanRPG.getTopicInfos(), message);
+            FA.Post.postReply(FA.Post.getTopicInfos(), message);
         });
 
         // Message pour demander des Nouvelles
@@ -156,7 +156,7 @@
 			console.log("news");
 			
         	var message = GM_getResourceText("message-inactive").replace("{USERNAME}", username);
-			FA.Post.postReply(EwilanRPG.getTopicInfos(), message);
+			FA.Post.postReply(FA.Post.getTopicInfos(), message);
         });
 
         // Message pour archiver
@@ -164,8 +164,8 @@
 			console.log("archive");
 			
         	var message = GM_getResourceText("message-archive");
-            FA.Post.moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.archives.personnages);
-            FA.Post.postReply(EwilanRPG.getTopicInfos(), message);
+            FA.Post.moveTopic(FA.Post.getTopicInfos(), FA.Archive.auberges.personnages);
+            FA.Post.postReply(FA.Post.getTopicInfos(), message);
         });
 
 		// Message pour demander des modifications
@@ -173,7 +173,7 @@
 			console.log("reject");
 			
             var message = "";
-            FA.Post.postReply(EwilanRPG.getTopicInfos(), message);
+            FA.Post.postReply(FA.Post.getTopicInfos(), message);
         });
 
         countWords();
