@@ -136,11 +136,17 @@
 
 		// Fiche Correcte à Valider
 		$("#validate").click(function() {
-			addToGroup(username, FA.Group[groupId]);
-			moveTopic(FA.Post.getTopicInfos(), FA.Group[groupId].forum);
+			$("#message").show();
+			$("#message button").click(function(data) {
+				console.log(data);
+				var message = "";
 
-			var message = GM_getResourceText("message-validated").replace("{USERNAME}", username).replace("{MESSAGE}", message);
-			FA.Post.postReply(FA.Post.getTopicInfos(), message);
+				addToGroup(username, FA.Group[groupId]);
+				moveTopic(FA.Post.getTopicInfos(), FA.Group[groupId].forum);
+
+				var result = GM_getResourceText("message-validated").replace("{USERNAME}", username).replace("{MESSAGE}", message);
+				FA.Post.postReply(FA.Post.getTopicInfos(), result);
+			});
 		});
 
 		// Message de Bienvenue
