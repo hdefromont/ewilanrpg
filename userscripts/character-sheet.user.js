@@ -8,10 +8,11 @@
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
 // @match        http://ewilanrpg.forumactif.com/t*
-// @resource     archive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/archive.html
-// @resource     inactive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/inactive.html
-// @resource     validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/validated.html
-// @resource     welcome https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/welcome.html
+// @resource     header https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/header.html
+// @resource     message-archive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-archive.html
+// @resource     message-inactive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-inactive.html
+// @resource     message-validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-validated.html
+// @resource     message-welcome https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-welcome.html
 // @grant        GM_setClipboard
 // @grant        GM_getResourceText
 // ==/UserScript==
@@ -123,24 +124,8 @@
         var username = $(firstPost).find(".post-author-name").text();
         var groupId = $(firstPost).find(".data[data-form='groupe']").data("group");
 
-        var modButtons = "<div class='mod-buttons' style='text-align:center;margin-bottom:16px;max-width:500px'></div>";
-
-        var welcome = "<div class='dropdown' style='display:inline'><button class='btn btn-default dropdown-toggle' id='reply' style='margin:2.5px' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><i class='material-icons'>reply</i> Répondre</a><div class='dropdown-menu' aria-labelledby='reply'><a class='dropdown-item' id='welcome'>Message de Bienvenue</a><a class='dropdown-item' id='news'>Demander des Nouvelles ?</a><a class='dropdown-item' id='archive'>Archiver</a></div></div>";
-        var reject = "<button class='btn btn-default btn-red' id='reject' style='margin:2.5px'><i class='material-icons'>block</i> Rejeter</a>";
-        var validate = "<button class='btn btn-default btn-green' id='validate' style='margin:2.5px'><i class='material-icons'>check</i> Valider</a>";
-        var list = "<button class='btn btn-default' id='listing' style='margin:2.5px'><i class='material-icons'>list</i> Ajouter aux Listes</button>";
-
-        var addData = '<hr style="margin-bottom:5px"/><form class="flex" style="padding:5px;text-align:left"><div class="form-group" style="flex:1;margin-bottom:unset"><label for="bienvenue">Souhaiter la bienvenue :</label><textarea class="form-control" rows="3" name="bienvenue" id="bienvenue" placeholder="Message personnalisé..."></textarea></div><button class="btn btn-default" type="submit" style="height:86px;margin-left:5px;margin-top:31px"><i class="material-icons" style="margin:-4px">send</i></button></form>';
-
-        var rejectReasons = '<hr style="margin-bottom:5px"/><form style="padding:5px;text-align:left" id="rejectReasons"><div class="form-group"><label for="message">Message personnalisé :</label><textarea class="form-control" rows="3" name="message" id="message" placeholder="Message personnalisé..."></textarea></div><div class="form-group"><label for="reasons">Ce qu\'il faut corriger :</label><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="sizeAvatar" value="sizeAvatar" /><label class="form-check-label" for="sizeAvatar">La taille de l\'avatar est incorrecte.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="pseudo" value="pseudo" /><label class="form-check-label" for="pseudo">Le pseudo est incorrect.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="wordCount" value="wordCount" /><label class="form-check-label" for="wordCount">Les descriptions sont trop courtes.</label></div><div class="form-check"><input class="form-check-input" type="checkbox" name="reasons" id="typeAvatar" value="typeAvatar" /><label class="form-check-label" for="typeAvatar">L\'avatar n\'est pas dessiné.</label></div></div><div class="form-group"><label for="other">Autres corrections nécessaires :</label><br/><button class="btn btn-default" onclick="addReason()" style="margin:5px"><i class="material-icons" style="margin:-4px">add</i></button><button class="btn btn-default" onclick="removeReason()" style="margin:5px"><i class="material-icons" style="margin:-4px">remove</i></button></div><ol></ol></form>';
-
+        var modButtons = GM_getResourceText("header");
         $(firstPost).find(".post-body").prepend(modButtons);
-        $(".mod-buttons").append(welcome)
-            .append(validate)
-            .append(reject)
-            .append(list)
-            .append(addData)
-            .append(rejectReasons);
 
         $("#listing").click(generateString);
         $("#validate").click(function() {
@@ -159,13 +144,13 @@
 
         // Message pour demander des Nouvelles
         $("#news").click(function() {
-        	var message = GM_getResourceText("inactive").replace("{USERNAME}", username);
+        	var message = GM_getResourceText("message-inactive").replace("{USERNAME}", username);
 			postReply(EwilanRPG.getTopicInfos(), message);
         });
 
         // Message pour archiver
         $("#archive").click(function() {
-        	var message = GM_getResourceText("archive");
+        	var message = GM_getResourceText("message-archive");
             moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.archives.personnages);
             postReply(EwilanRPG.getTopicInfos(), message);
         });
