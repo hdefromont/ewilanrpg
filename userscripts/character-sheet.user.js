@@ -3,11 +3,16 @@
 // @namespace    http://ewilanrpg.forumactif.com/
 // @version      0.1
 // @description  Ajoute les boutons de raccourcis qui permettent de valider un personnage.
-// @updateURL    https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.user.js
-// @downloadURL  https://raw.githubusercontent.com/hdefromont/ewilanrpg/master/userscripts/character-sheet.user.js
+// @updateURL    https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
+// @downloadURL  https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
+// @resource     archive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/archive.html
+// @resource     inactivce https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/inactivce.html
+// @resource     validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/validated.html
+// @resource     welcome https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/welcome.html
 // @grant        GM_setClipboard
+// @grant        GM_getResourceText
 // ==/UserScript==
 
 (function() {
@@ -153,13 +158,13 @@
 
         // Message pour demander des Nouvelles
         $("#news").click(function() {
-        	var message = '<fiche><titre>Des Nouvelles ?</titre><content><block>Coucou @"' + username + '" !<br/><br/>Cela fait déjà deux semaines que tu as posté cette fiche et nous n\'avons pas de nouvelles. Nous te donnons un délai supplémentaire d\'une semaine, mais passé ce délai, cette fiche sera archivée.</block><block><icon><i class="material-icons">help</i></icon>N\'hésite pas à poser tes questions dans la section des <a href="/f37-questions-et-idees" target="_blank">Questions</a> ou dans le salon [b]#questions[/b] sur Discord. Privilégie ces moyens pour une réponse rapide !</block></content></fiche>';
-            postReply(EwilanRPG.getTopicInfos(), message);
+        	var message = GM_getResourceText("inactive").replace("{USERNAME}", username);
+			postReply(EwilanRPG.getTopicInfos(), message);
         });
 
         // Message pour archiver
         $("#archive").click(function() {
-        	var message = '<fiche><titre>Bienvenue en Gwendalavir</titre><br/><br/>Bienvenue sur le forum, [b]@"' + username + '"[/b] !<br/><br/>[i]Message personnalisé.[/i]<br/><br/>Je t\'invite à consulter <a href="/f38-encyclopedie">[b]l\'Encyclopédie[/b]</a> si tu as des questions sur l\'univers de Gwendalavir.</fiche>';
+        	var message = GM_getResourceText("archive");
             moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.archives.personnages);
             postReply(EwilanRPG.getTopicInfos(), message);
         });
