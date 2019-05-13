@@ -13,20 +13,8 @@
 	<button class="btn btn-default btn-red" id="reject"><i class="material-icons">block</i> Rejeter</button>
 	<button class="btn btn-default" id="listing"><i class="material-icons">list</i> Ajouter aux Listes</button>
 	
-	<div id="message">
-		<hr/>
-		<form class="flex" style="padding:5px;text-align:left">
-			<div class="form-group" style="flex:1;margin-bottom:unset">
-				<label for="message">Message personnalisé</label>
-				<textarea class="form-control" rows="3" name="message" placeholder="Message personnalisé..."></textarea>
-			</div>
-			<button class="btn btn-default" title="Envoyer" type="submit" style="height:86px;margin-left:5px;margin-top:31px"><i class="material-icons" style="margin:-4px">send</i></button>
-		</form>
-	</div>
-	
-	<hr style="margin-bottom:5px">
-	
 	<form style="padding:5px;text-align:left" id="rejectReasons">
+		<hr style="margin-bottom:5px">
 		<div class="form-group">
 			<label for="message">Message personnalisé :</label>
 			<textarea class="form-control" rows="3" name="message" id="message" placeholder="Message personnalisé..."></textarea>
@@ -59,4 +47,15 @@
 		<ol>
 		</ol>
 	</form>
+
+	<div id="message">
+		<hr/>
+		<form class="flex" style="padding:5px;text-align:left">
+			<div class="form-group" style="flex:1;margin-bottom:unset">
+				<label for="message">Message personnalisé</label>
+				<textarea class="form-control" rows="3" name="message" placeholder="Message"></textarea>
+			</div>
+			<button class="btn btn-default" title="Envoyer" type="submit" style="height:86px;margin-left:5px;margin-top:31px"><i class="material-icons" style="margin:0 -4px">send</i></button>
+		</form>
+	</div>
 </div>

@@ -16,3 +16,11 @@
 .mod-buttons button i.material-icons {
 	vertical-align: bottom;
 }
+
+.mod-buttons #message {
+	display: none;
+}
+
+.mod-buttons #rejectReasons {
+	display: none;
+}
