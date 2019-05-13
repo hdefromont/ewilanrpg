@@ -136,6 +136,7 @@
 
 		// Fiche Correcte à Valider
 		$("#validate").click(function() {
+			console.log("validate");
 			$("#message").show();
 			$("#message button").click(function(data) {
 				console.log(data);
