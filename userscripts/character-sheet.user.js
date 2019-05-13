@@ -138,7 +138,6 @@
 
 		// Fiche Correcte à Valider
 		$("#validate").click(function() {
-			console.log("validate");
 			$("#message").show();
 			$("#message form").submit(function(event) {
 				event.preventDefault();
@@ -146,7 +145,7 @@
 				var message = $(this).find("textarea").val();
 
 				FA.User.addToGroup(username, FA.Group[groupName].id);
-				FA.Post.moveTopic(topicInfos, FA.Group[groupName].forum);
+				FA.Post.moveTopic(topicInfos, "f" + FA.Group[groupName].forum);
 
 				var result = GM_getResourceText("message-validated").replace("{USERNAME}", username).replace("{MESSAGE}", message);
 				FA.Post.postReply(topicInfos, result);
