@@ -124,7 +124,9 @@
 	if($(".character").length > 0) {
 		var firstPost = $(".post").has(".character");
 		var username = $(firstPost).find(".post-author-name").text();
-		var groupId = $(firstPost).find(".data[data-form='groupe']").data("group");
+		var groupName = $(firstPost).find(".sheet").data("group");
+
+		var topicInfos = FA.Post.getTopicInfos();
 
 		var modButtons = GM_getResourceText("header");
 		$(firstPost).find(".post-body").prepend(modButtons);
@@ -138,15 +140,16 @@
 		$("#validate").click(function() {
 			console.log("validate");
 			$("#message").show();
-			$("#message button").click(function(data) {
-				console.log(data);
-				var message = "";
+			$("#message form").submit(function(event) {
+				event.preventDefault();
 
-				addToGroup(username, FA.Group[groupId]);
-				moveTopic(FA.Post.getTopicInfos(), FA.Group[groupId].forum);
+				var message = $(this).find("textarea").val();
+
+				FA.User.addToGroup(username, FA.Group[groupName].id);
+				FA.Post.moveTopic(topicInfos, FA.Group[groupName].forum);
 
 				var result = GM_getResourceText("message-validated").replace("{USERNAME}", username).replace("{MESSAGE}", message);
-				FA.Post.postReply(FA.Post.getTopicInfos(), result);
+				FA.Post.postReply(topicInfos, result);
 			});
 		});
 
