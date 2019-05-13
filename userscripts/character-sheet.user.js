@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ewilan RPG - Validation de Personnage
 // @namespace    http://ewilanrpg.forumactif.com/
-// @version      0.1a
+// @version      0.1b
 // @description  Ajoute les boutons de raccourcis qui permettent de valider un personnage.
 // @updateURL    https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
 // @downloadURL  https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
@@ -13,8 +13,10 @@
 // @resource     message-inactive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-inactive.html
 // @resource     message-validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-validated.html
 // @resource     message-welcome https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/message-welcome.html
-// @grant        GM_setClipboard
+// @resource     style https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/styles/character-sheet.css
+// @grant        GM_addStyle
 // @grant        GM_getResourceText
+// @grant        GM_setClipboard
 // ==/UserScript==
 
 (function() {
@@ -126,6 +128,9 @@
 
         var modButtons = GM_getResourceText("header");
         $(firstPost).find(".post-body").prepend(modButtons);
+	    
+	var customStyle = GM_getResourceText("style");
+	GM_addStyle(customStyle);
 
         $("#listing").click(generateString);
         $("#validate").click(function() {
