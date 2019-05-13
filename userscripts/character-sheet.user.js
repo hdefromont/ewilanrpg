@@ -7,6 +7,7 @@
 // @downloadURL  https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/character-sheet.user.js
 // @author       Hélène de Fromont
 // @match        http://sanctuary.forumactif.com/t*
+// @match        http://ewilanrpg.forumactif.com/t*
 // @resource     archive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/archive.html
 // @resource     inactive https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/inactive.html
 // @resource     validated https://github.com/hdefromont/ewilanrpg/raw/master/userscripts/templates/character-sheet/validated.html
