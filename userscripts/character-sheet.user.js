@@ -129,32 +129,40 @@
         var modButtons = GM_getResourceText("header");
         $(firstPost).find(".post-body").prepend(modButtons);
 	    
-	var customStyle = GM_getResourceText("style");
-	GM_addStyle(customStyle);
+		var customStyle = GM_getResourceText("style");
+		GM_addStyle(customStyle);
 
         $("#listing").click(generateString);
         $("#validate").click(function() {
+			console.log("validate");
+			
             addToGroup(username, EwilanRPG.groups[groupId]);
             moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.groups[groupId].forum);
 
-            var message = '<fiche><titre>Bienvenue en Gwendalavir</titre><content><block>Félicitations @"' + username + '", ta fiche est officiellement [b]validée[/b] !<br/><br/>Message personnalisé.</block><block>N\'hésite pas à faire ton <a href="/f39-journaux-de-personnages" target="_blank">journal de personnage</a>. Tu peux également faire une <a href="/t2264-rp-demande" target="_blank">demande de RP</a> et une <a href="/t2262-liens-demande target="_blank">demande de lien</a>.<br/><br/>Enfin, tu peux allez jeter un œil aux <a href="/f53-quetes target="_blank">quêtes</a> en cours !</block><block>Nous restons à ta disposition pour toutes demandes ou questions. Une fois encore bienvenue parmi nous et bon jeu !</block></content></fiche>';
-            postReply(EwilanRPG.getTopicInfos(), message);
+            var message = GM_getResourceText("message-validated").replace("{USERNAME}", username);
+			postReply(EwilanRPG.getTopicInfos(), message);
         });
 
         // Message de Bienvenue
         $("#welcome").click(function() {
-            var message = '<fiche><titre>Bienvenue en Gwendalavir</titre><content><block>Bienvenue sur le forum, @"' + username + '" !<br/><br/>Message personnalisé.</block><block>Je t\'invite à consulter <a href="/f38-encyclopedie" target="_blank">l\'Encyclopédie</a> si tu as des questions sur l\'univers de Gwendalavir.<br/><br/>Tu peux également aller jeter un œil au <a href="/t2066-guide-du-nouveau-joueur" target="_blank">Guide du Nouveau Joueur</a> pour t\'aider à bien débuter sur le forum et construire ta fiche. Tu peux aussi aller faire une <a href="/t2260-parrainage-gestion" target="_blank">demande de parrainage</a> si tu en ressens le besoin.<br/><br/>Lorsque tu as terminé, tu dois passer par <a href="/t2261-fiche-terminee-passage-obligatoire">ce sujet</a> pour nous le signaler. Cela nous permet de te recenser plus facilement.</block><block><icon><i class="material-icons">forum</i></icon>Nous n\'avons pas de ChatBox, mais tu peux nous rejoindre sur <a href="https://discord.gg/nG4wy3r" target="_blank">Discord</a>. Pense à inclure au minimum le prénom de ton personnage dans ton pseudo Discord car c\'est obligatoire !</block><block><icon><i class="material-icons">help</i></icon>N\'hésite pas à poser tes questions dans la section des <a href="/f37-questions-et-idees" target="_blank">Questions</a> ou dans le salon [b]#questions[/b] sur Discord. Privilégie ces moyens pour une réponse rapide !</block><block>Bon courage pour la rédaction de ta fiche.</block></content></fiche>';
+			console.log("welcome");
+			
+            var message = GM_getResourceText("message-welcome").replace("{USERNAME}", username);
             postReply(EwilanRPG.getTopicInfos(), message);
         });
 
         // Message pour demander des Nouvelles
         $("#news").click(function() {
+			console.log("news");
+			
         	var message = GM_getResourceText("message-inactive").replace("{USERNAME}", username);
 			postReply(EwilanRPG.getTopicInfos(), message);
         });
 
         // Message pour archiver
         $("#archive").click(function() {
+			console.log("archive");
+			
         	var message = GM_getResourceText("message-archive");
             moveTopic(EwilanRPG.getTopicInfos(), EwilanRPG.archives.personnages);
             postReply(EwilanRPG.getTopicInfos(), message);
@@ -162,6 +170,8 @@
 
 		// Message pour demander des modifications
         $("#reject").click(function() {
+			console.log("reject");
+			
             var message = "";
             postReply(EwilanRPG.getTopicInfos(), message);
         });
