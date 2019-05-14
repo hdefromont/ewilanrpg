@@ -1,0 +1,185 @@
+/*-----------------------------
+ * FORUMS
+ * ---------------------------- */
+ .forums {
+	text-align: center;
+ }
+
+ .forum {
+	background-color: white;
+	background-position: center;
+	background-size: cover;
+	border: 0.25em solid white;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	box-sizing: border-box;
+	height: 256px;
+	margin-bottom: 2%;
+	padding: 1em 0;
+	position: relative;
+	text-align: justify;
+	transition: .5s;
+	vertical-align: top;
+ }
+
+ .forum:hover .forum-content {
+	opacity: 1;
+ }
+
+ .forum:hover .forum-icon {
+	opacity: 0;
+ }
+
+ /* Titres */
+ .forum h2, .forum h3 {
+	display: block;
+	font-family: 'Zeyada', cursive;
+	font-size: 2.5em;
+	padding: 0 0.25em;
+	padding-top: 0.125em;
+	text-shadow: 1px 1px 0px rgba(204, 204, 204, 0.7);
+ }
+
+ .forum-title {
+	color: black !important;
+	font-weight: bold;
+	text-decoration: none;
+ }
+
+ /* Contenu et description */
+ .forum-content {
+	//opacity: 0;
+	margin: initial;
+	padding-bottom: 1em;
+	transition: .5s;
+	z-index: 1;
+ }
+
+ .forum-description {
+	background-color: rgba(0, 0, 0, 0.8);
+	margin: 0.5em 0 1em;
+	padding: 1em;
+	width: 100%;
+ }
+
+ .forum-info {
+	padding: 0.5em;
+ }
+
+ .forum-info div {
+	color: #dadada;
+	height: 100px;
+	overflow-y: auto;
+	padding-right: 0.25em;
+ }
+
+ .forum-info em {
+	font-style: normal;
+	font-weight: bold;
+ }
+
+ .forum-info em:after {
+	content: " ₪";
+	font-weight: normal;
+ }
+
+ /* Sous-forums */
+ .forum-subforums {
+	text-align: center;
+	margin-top: 1em;
+	max-width: 140px;
+	padding-right: 0.5em;
+ }
+
+ .forum-subforums div {
+	font-size: 0;
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
+ }
+
+ .forum-subforums a {
+	display: inline-block;
+	font-size: small;
+	padding: 0.15em 0.25em;
+	background-color: #EBEBEA;
+	color: #595959 !important;
+	text-decoration: none;
+	transition: .25s;
+	width: 125px;
+	margin-right: 2px;
+	border: none;
+ }
+
+ .forum-subforums a + a {
+	margin-top: 2px;
+ }
+
+ .forum-subforums a:hover {
+	color: black !important;
+ }
+
+ /* Dernier message + Stats */
+ .forum-bottom {
+	background-color: rgba(255, 255, 255, 0.5);
+	color: black;
+	display: flex;
+	height: 4em;
+	padding: 0.5em 1em;
+	position: relative;
+	z-index: 1;
+ }
+
+ .forum .avatar-default {
+	background-image: url(https://i11.servimg.com/u/f11/18/79/56/44/baseli12.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 18px;
+	float: left;
+	height: 3em;
+	margin-right: 0.5em;
+	width: 3em;
+ }
+
+ .forum-lastpost {
+	flex: 1;
+ }
+
+ .forum-lastpost-inner {
+	height: 3em;
+	margin-left: 3.5em;
+	margin-right: 1em;
+ }
+
+ .forum-lastpost-title {
+	display: block;
+	height: 19px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+ }
+
+ .forum-stats {
+	text-align: right;
+ }
+
+
+ .forum-stats p {
+	margin: unset;
+ }
+
+ .forum-stats i.material-icons {
+	font-size: 19px;
+	margin-left: 3px;
+ }
+
+ /* Icône de statut du forum */
+ .forum-icon {
+	height: 2.5em;
+	width: 2.5em;
+	position: absolute;
+	background-size: cover;
+	bottom: 1.375em;
+	right: 1.125em;
+	transition: .5s;
+	z-index: 0;
+ }
