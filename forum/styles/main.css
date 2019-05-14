@@ -1,0 +1,334 @@
+/*-----------------------------
+ * GENERALITES
+ * ---------------------------- */
+ body {
+	background-color: #D8CDAC;
+	background-image: url(https://i.servimg.com/u/f86/18/79/56/44/m4nr10.jpg);
+	background-size: 100% auto;
+	font-family: 'Philosopher', sans-serif;
+	font-size: small;
+	color: #333333;
+	margin-top: 64px !important;
+ }
+
+ #wrap, .wrap {
+	margin: auto;
+	max-width: 1200px;
+	min-width: 500px;
+	width: 80%;
+ }
+
+ #header-banner {
+	position: relative;
+ }
+
+ #header-banner img {
+	width: 100%;
+ }
+
+ #header-desc {
+	position: absolute;
+	top: 58%;
+	padding: 2px;
+	left: 15%;
+	bottom: 20%;
+	right: 48%;
+	border: 1px solid white;
+ }
+
+ #header-desc div {
+	text-align: justify;
+	padding: 0.5em;
+	background-color: rgba(255,255,255,0.8);
+	min-height: 100%;
+	max-height: 100%;
+	overflow: auto;
+	line-height: 1.3em;
+ }
+
+ dl, ol, ul {
+	margin-bottom: unset;
+	padding-left: unset;
+ }
+
+ a, a:hover {
+	text-decoration: none;
+ }
+
+ p:last-of-type {
+	margin-bottom: unset;
+ }
+
+ .flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+ }
+
+ .sticky {
+	position: sticky;
+	top: calc(64px + 1em);
+ }
+
+ .clear {
+	clear: both;
+ }
+
+ .hidden {
+	display: none;
+ }
+
+ .mobile-show {
+	display: none;
+ }
+
+ q:before {
+	content: "« ";
+ }
+
+ q:after {
+	content: " »";
+ }
+
+/*-----------------------------
+ * BOUTONS
+ * ---------------------------- */
+.btn-sm {
+	font-size: small;
+	line-height: 1.75em;
+}
+ 
+.btn-default {
+	background-color: #1e88e5;
+	color: white;
+	margin: 0.25em;
+}
+
+.btn-green {
+	background-color: #4CAF50;
+}
+
+.btn-red {
+	background-color: #F44336;
+}
+
+.btn-primary {
+	background-color: #1e88e5;
+	border-color: #1e88e5;
+}
+
+.btn-secondary {
+	background-color: #8b9295;
+	border-color: #8b9295;
+}
+
+.btn-danger {
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+
+/*-----------------------------
+ * GROUPES
+ * ---------------------------- */
+.group[data-group="alaviriens"] {
+	background-color: #6270D6;
+	color: #6270D6;
+}
+
+.group[data-group="dessinateurs"] {
+	background-color: #E94E77;
+	color: #E94E77;
+}
+
+.group[data-group="alines"] {
+	background-color: #7FC7AF;
+	color: #7FC7AF;
+}
+
+.group[data-group="frontaliers"] {
+	background-color: #A6263A;
+	color: #A6263A;
+}
+
+.group[data-group="etrangers"] {
+	background-color: #6F4A84;
+	color: #6F4A84;
+}
+
+.group[data-group="marchombres"] {
+	background-color: #56A3D3;
+	color: #56A3D3;
+}
+
+.group[data-group="mercenaires-du-chaos"] {
+	background-color: #D68189;
+	color: #D68189;
+}
+
+.group[data-group="thuls"] {
+	background-color: #C6A49A;
+	color: #C6A49A;
+	}
+
+/*-----------------------------
+ * AVATARS
+ * ---------------------------- */
+ .avatar-default {
+	background-color: rgba(0,0,0,0.22);
+	border-radius: 50%;
+	box-shadow: 0.1em 0.1em 0.25em rgba(0,0,0,0.11), 0 0 0.1em rgba(0,0,0,0.22);
+	overflow: hidden;
+	vertical-align: middle;
+ }
+
+ .avatar-default img {
+	margin-top: -33%;
+	width: 100%;
+ }
+
+/*-----------------------------
+ * MATERIAL ICONS
+ * ---------------------------- */
+ .material-icons {
+	vertical-align: middle;
+ }
+
+/*-----------------------------
+ * PAGE D'ACCUEIL
+ * ---------------------------- */
+ #introduction .block-content {
+	background-color: transparent;
+	border: unset;
+	box-shadow: unset;
+	padding: unset;
+ }
+
+ ul.action-bar {
+	background-color: #263238;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	margin-bottom: 1.5em;
+	padding: 0.75em;
+	text-align: left;
+ }
+
+ ul.action-bar li {
+	display: inline-block;
+	line-height: 24px;
+	list-style: none;
+	margin: 0 0.5em;
+ }
+
+ ul.action-bar li.rightside {
+	float: right;
+ }
+
+ ul.action-bar a {
+	color: white;
+ }
+
+/*-----------------------------
+ * FIL D'ARIANE
+ * ---------------------------- */
+ #breadcrumbs {
+	background-color: #263238;
+	border-radius: 3px;
+	clear: both;
+	color: #fff;
+	float: left;
+	font-size: 0;
+	margin-bottom: 22px;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	white-space: nowrap;
+ }
+
+ #breadcrumbs a {
+	border-radius: 3px;
+	color: #fff;
+	display: inline-block;
+	font-size: small;
+	padding: 9px 16px;
+	position: relative;
+ }
+
+ #breadcrumbs a:first-child {
+	padding: 9px 16px!important;
+ }
+
+ #breadcrumbs i {
+	margin: -3px 0;
+	vertical-align: -5px;
+ }
+
+ #breadcrumbs i + span {
+	margin-left: 8px;
+ }
+
+ #breadcrumbs a + a:before {
+	content: "chevron_right";
+	font-family: "Material Icons";
+	font-size: 16px;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 50%;
+	transform: translate3d(-50%,-50%,0);
+ }
+
+/*-----------------------------
+ * BLOCK
+ * ---------------------------- */
+ .block {
+	margin: 1.5em 0;
+ }
+
+ .block .block-header, .posts-header {
+	background-image: url(https://i.servimg.com/u/f86/18/79/56/44/fekw11.jpg);
+	background-position: center;
+	background-size: cover;
+	border: 0.25em solid white;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	color: white;
+	font-family: Philosopher, sans-serif;
+	margin-bottom: 0.5em;
+	padding: 0.5em 1em;
+ }
+
+ .block .block-content {
+	background-color: white;
+	border: 0.25em solid white;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	padding: 1em 1.5em;
+ }
+
+ .block .block-header .block-collapse {
+	float: right;
+ }
+
+ .block-collapse i:after {
+	content: "keyboard_arrow_up";
+ }
+
+ .block-collapse.collapsed i:after {
+	content: "keyboard_arrow_down";
+ }
+
+/*-----------------------------
+ * SCROLLBAR
+ * ---------------------------- */
+ div::-webkit-scrollbar {
+	width: 6.5px;
+ }
+
+ div::-webkit-scrollbar-track {
+	background: #858c8f;
+ }
+
+ div::-webkit-scrollbar-thumb {
+	background: #ebebea;
+ }
+
+ div::-webkit-scrollbar-thumb:hover {
+	background: #555;
+ }
