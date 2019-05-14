@@ -1,0 +1,555 @@
+/*-----------------------------
+ * SUJETS
+ * ---------------------------- */
+.post {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+.post-anchor {
+	position: absolute;
+	top: -64px;
+}
+
+.post-content {
+	background-color: #FFF;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	flex-shrink: 1;
+	margin: 0.5em 0.25em;
+	margin-left: unset;
+	min-width: calc(500px + 2em);
+	position: relative;
+	text-align: initial;
+	width: 100%;
+	z-index: 500;
+}
+
+.post-body {
+	flex: 1;
+	padding: 1em;
+	text-align: justify;
+}
+
+.post-header, .post-footer {
+	background-color: #F5F5F5;
+	overflow: hidden;
+	padding: 0.5em 1em;
+}
+
+.post-header {
+	border-bottom: 1px solid #EBEBEB;
+}
+
+.post-header h2 {
+	font-size: 1em;
+	margin: unset;
+}
+
+.post-header i {
+	font-size: 16px;
+	vertical-align: -3px;
+	color: grey;
+}
+
+.post-footer {
+	border-top: 1px solid #EBEBEB;
+	color: grey;
+	font-size: 0.75em;
+}
+
+.post-edit {
+	float: right;
+}
+
+.post-edit br {
+	display: none;
+}
+
+.post-date {
+	text-transform: capitalize;
+}
+
+.post-header h2 {
+	display: block;
+	float: left;
+	font-weight: 400;
+	margin-right: 1em;
+}
+
+.post-buttons {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.post-buttons ul {
+	list-style: none;
+	margin: 0;
+}
+
+.post-buttons li {
+	float: left;
+}
+
+.post-buttons li + li {
+	margin-left: 1em;
+}
+
+/* Quick reply */
+.quick-reply .textarea {
+	background-color: #F5F5F5;
+	border-color: #EBEBEB;
+	border-radius: 1em;
+	border-style: solid;
+	border-width: 2px;
+	display: block;
+	font-size: 1em;
+	min-height: 6em;
+	padding: 1em;
+	resize: vertical;
+	white-space: pre-wrap;
+	width: 100%;
+}
+
+#quick-reply-avatar {
+	display: none;
+}
+
+/* Profil */
+.post-profile {
+	background-color: #F5F5F5;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	flex-basis: 200px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	margin: 0.5em 0.25em;
+	margin-right: unset;
+	padding: 1.5em 1em;
+	position: relative;
+	text-align: center;
+}
+
+.post-author-name {
+	display: block;
+	font: 2em "Zeyada";
+	line-height: 1.25em;
+	margin-top: 0.25em;
+}
+
+.post-author-avatar {
+	border: 0.25em solid white;
+	margin-top: 1em;
+	position: relative;
+	height: 320px;
+	width: 200px;
+	box-sizing: content-box;
+	overflow: hidden;
+}
+
+.post-author-details {
+	width: 100%;
+	height: 320px;
+	position: absolute;
+	top: 320px;
+	padding: 1em;
+	background-color: rgba(255, 255, 255, 0.9);
+	transition: .5s;
+}
+
+.post-author-info {
+	text-align: left;
+}
+
+.post-author-info dt {
+	display: inline-block;
+}
+
+.post-author-info dd {
+	margin-left: 0.25em;
+}
+
+.post-author-contact {
+	margin-top: 1em;
+}
+
+.post-author-contact a + a {
+	margin-left: 0.25em;
+}
+
+.post-author-contact.dropdown i.material-icons {
+	display: none;
+}
+
+.post-author-avatar:hover .post-author-details {
+	top: 0;
+}
+
+.post-author-rpg {
+	margin-top: 1em;
+}
+
+.rpg-value {
+	text-align: left;
+	width: 100%;
+	background-color:white;
+	padding:0.25em 0.5em;
+	margin-top: 0.25em;
+}
+
+.rpg-value i.material-icons {
+	margin-right: 5px;
+}
+
+.rpg-plus {
+	display:inline-block;
+	text-align:center;
+	background-color: white;
+	margin-top: 0.5em;
+	text-transform: uppercase;
+}
+
+/*-----------------------------
+ * CONTENU MESSAGE
+ * ---------------------------- */
+.codebox {
+	background-color: #354147;
+	border-color: rgba(0,0,0,0.44);
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 0 0 0 6px;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 1.5;
+	padding: 8px 16px 8px 10px;
+}
+
+.codebox code {
+	display: block;
+	max-height: 400px;
+	overflow: auto;
+}
+
+.hljs {
+	background-color: transparent !important;
+	padding: 0 !important;
+}
+
+.codebox .copy {
+	float: right;
+	display: block;
+	background-color: #1e2428;
+	padding: 0.15em 0.5em;
+	font-variant: all-small-caps;
+	cursor: pointer;
+}
+
+.spoiler_title {
+	background-color: rgba(0,0,0,0.22);
+	border-radius: 3px;
+	cursor: pointer;
+	display: block;
+	font-weight: 600;
+	padding: 6px 11px;
+	position: relative;
+}
+
+.spoiler_title:after {
+	content: "arrow_drop_down";
+	font-size: 18px;
+	line-height: 36px;
+	pointer-events: none;
+	position: absolute;
+	right: 11px;
+	top: 0;
+}
+
+.spoiler_content {
+	border-left: 3px solid rgba(0,0,0,0.22);
+	display: none;
+	margin-top: 6px;
+	padding-left: 22px;
+}
+
+.spoiler_content.hidden {
+	display: block;
+}
+
+blockquote {
+	background-color: #f5f5f5;
+	border-color: rgba(0,0,0,0.11);
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 0 0 0 6px;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 1.5;
+	padding: 8px 16px 8px 10px;
+}
+
+blockquote cite {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+/*-----------------------------
+ * PROFILE
+ * ---------------------------- */
+#sidebar-left {
+	align-self: stretch;
+	background-color: #F5F5F5;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	margin-right: 1em;
+}
+
+#profile-view {
+	padding-bottom: 1em;
+}
+
+#profile-view.sticky {
+	top: 64px;
+}
+
+.profile-header {
+	padding: 1em;
+	text-align: center;
+}
+
+.profile-header-background {
+	display: none;
+}
+
+.profile-username {
+	display: block;
+	font: 2em "Zeyada";
+	line-height: 1.25em;
+	margin-bottom: 0;
+	margin-top: 0.25em;
+}
+
+.profile-avatar {
+	border: 0.25em solid white;
+}
+
+ul#profile-menu {
+	list-style: none;
+}
+
+#profile-menu li {
+	background-color:white;
+	border-color: #EBEBEB;
+	border-style: solid;
+	border-width: 1px 0;
+	color:white;
+	font-weight: bold;
+	margin: 0.25em 0px;
+	padding: 1em;
+}
+
+#profile-menu li:hover {
+	background-color:#ccc;
+	margin: 0.25em -1px;
+}
+
+#profile-menu li:hover a {
+}
+
+#profile-menu li + li {
+	border-top: none;
+}
+
+/* Main */
+#profile-main .block {
+	margin: unset;
+}
+
+#profile-main {
+	flex: 1;
+}
+
+#profile .item {
+	display: inline-block;
+	width: 8em;
+}
+
+#profile .avatar-default {
+	height: 6em;
+	width: 6em;
+	border: 0.25em solid #f5f5f5;
+}
+
+/* RPG */
+#rpg-view .form-buttons {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#rpg-view i.material-icons {
+	margin-right: 4px;
+}
+
+.rpg-image {
+	flex: 1;
+	border: 0.25em solid #f5f5f5;
+	max-height: 250px;
+	overflow: hidden;
+}
+
+.rpg-image br {
+	display: none;
+}
+
+.rpg-image img {
+	width: 100%;
+}
+
+.rpg-top {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.rpg-info {
+	margin-right: 1.75em;
+	max-width: 400px;
+	align-self: center;
+}
+
+.rpg-info dl {
+	background-color: #f5f5f5;
+	padding: 0.25em 0.5em;
+	margin: 0.25em 0;
+}
+
+.rpg-info dt {
+	display: inline-block;
+	margin-right: 3px;
+}
+
+.rpg-other {
+	margin-top: 1em;
+}
+
+.rpg-other dl {
+	display: inline-block;
+	width: calc(50% - 1.5em);
+	vertical-align: top;
+}
+
+.rpg-other dl:nth-child(even) {
+	margin-right: 1.5em;
+}
+
+.rpg-other dl:nth-child(odd) {
+	margin-left: 1.5em;
+}
+
+.rpg-other dl:first-of-type {
+	display: block;
+	margin: unset;
+	width: 100%;
+}
+
+.rpg-other dt {
+	background-color: #F5F5F5;
+	border-color: #EBEBEB;
+	border-style: solid;
+	border-width: 1px 0;
+	font-weight: 600;
+	margin: 1.5em calc(-1.75em - 1px);
+	padding: 1.5em;
+}
+
+.rpg-other dd {
+	padding-right: 0.25em;
+	display: block;
+	max-height: 150px;
+	overflow: auto;
+	text-align: justify;
+}
+
+.rpg-other dd ul {
+	padding-left: 1.75em;
+}
+
+.rpg-other span.date {
+   font-weight: bold;
+}
+
+.rpg-other span.date:after {
+	content: " - ";
+	font-weight: normal;
+}
+
+.rpg-other span.with {
+	color: grey;
+	font-style: italic;
+}
+
+.rpg-other span.with:before {
+	content: " avec ";
+}
+
+.rpg-other span.desc {
+	display: block;
+	font-style: italic;
+}
+
+/* Liens */
+.rpg-other dl:first-of-type dd {
+	max-height: unset;
+	overflow: visible;
+}
+
+.rpg-other dl:first-of-type ul {
+	padding: unset;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.rpg-other dl:first-of-type li {
+	display: block;
+	margin-top: 1.5em;
+	width: calc(50% - 1em);
+}
+
+.rpg-other dl:first-of-type li:nth-child(1), .rpg-other dl:first-of-type li:nth-child(2) {
+	margin-top: unset;
+}
+
+.rpg-other dl:first-of-type li:nth-child(odd) {
+	margin-right: 1em;
+}
+
+.rpg-other dl:first-of-type li:nth-child(even) {
+	margin-left: 1em;
+}
+
+.rpg-other dl:first-of-type img {
+	float: left;
+	border-radius: 50%;
+	border: 0.25em solid #f5f5f5;
+	box-shadow: 0.1em 0.1em 0.25em rgba(0,0,0,0.11), 0 0 0.1em rgba(0,0,0,0.22);
+	box-sizing: content-box;
+	height: 100px;
+	max-width: 100px;
+	margin-right: 1em;
+}
+
+.rpg-other dl:first-of-type a {
+	display: block;
+	font-size: 1.25em;
+	padding-top: 0.25em;
+}
+
+.rpg-other dl:first-of-type span.desc {
+	height: 70px;
+	display: block;
+	font-style: normal;
+	text-align: justify;
+	overflow: auto;
+	padding-right: 0.25em;
+	margin-bottom: 0.25em;
+}
