@@ -1,0 +1,152 @@
+/*-----------------------------
+ * LISTE DES MEMBRES & GROUPES
+ * ---------------------------- */
+ #member-list, #group-list, .pnj-list {
+	justify-content: space-between;
+	margin: unset;
+	margin-bottom: 1em;
+ }
+
+ .member, .group, .pnj {
+	background-color: white;
+	border: 0.25em solid #fff;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	box-sizing: content-box;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	overflow: hidden;
+	padding: unset;
+	position: relative;
+	text-align: center;
+ }
+
+ .member {
+	height: 225px;
+	min-width: 175px;
+	max-width: 200px;
+ }
+
+ .group {
+	height: 150px;
+	max-width: 48%;
+ }
+
+ .pnj {
+	border: 0.5em solid #fff;
+	box-shadow: unset;
+	height: 400px;
+	margin: 0 1em;
+	max-width: 200px;
+ }
+
+ .group img {
+	margin-top: -12.5%;
+	transition: .5s;
+	width: 100%;
+ }
+
+ .member img {
+	margin-top: -25%;
+	max-width: initial;
+	transition: .5s;
+	width: 100%;
+ }
+
+ .member-name, .group-name, .pnj-name {
+	height: 5em;
+	display: flex;
+	justify-content: center;
+ }
+
+ .member-name div, .group-name div, .pnj-name div {
+	align-self: center;
+	background-color: rgba(255, 255, 255, 0.9);
+	display: block;
+	font-weight: bold;
+	margin: 0 1em;
+	padding: 0.5em 1em;
+	text-transform: uppercase;
+ }
+
+ .member-name a, .group-name a {
+	text-decoration: none;
+ }
+
+ .member-info, .group-info, .pnj-info {
+	position: absolute;
+	transition: 1s;
+	width: 100%;
+ }
+
+ .member-info {
+	top: calc(225px - 5em);
+	height: 250px;
+ }
+
+ .group-info {
+	top: calc(150px - 5em);
+	height: 150px;
+ }
+
+ .pnj-info {
+	top: calc(400px - 5em);
+	height: 400px;
+ }
+
+ .member:hover .member-info, .group:hover .group-info, .pnj:hover .pnj-info {
+	top: 0px;
+ }
+
+ .member:hover img, .group:hover img, .pnj:hover img {
+	filter: blur(2.5px);
+ }
+
+ .member-data, .group-description, .pnj-data {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding-top: 1em;
+ }
+
+ .member-data {
+	height: calc(225px - 5em);
+	padding: 1em;
+ }
+
+ .pnj-description {
+	height: 250px;
+	overflow: auto;
+	padding: 1em;
+	text-align: justify;
+ }
+
+ .group-description {
+	text-align: justify;
+	height: calc(150px - 5em);
+	overflow: auto;
+	padding: 1em;
+ }
+
+ table.user-labels {
+	border-collapse: separate;
+	border-spacing: 0.2em;
+	box-sizing: content-box;
+	width: 100%;
+ }
+
+ table.user-labels td {
+	background-color: rgba(0, 0, 0, 0.75);
+	color: white;
+	padding: 3px 5px;
+	font-size: 11px;
+	text-align: left;
+ }
+
+ table.user-labels td:first-child {
+	font-variant: small-caps;
+	text-align: right;
+	font-weight: bold;
+ }
+
+ .pnj-data table {
+	margin: 0 1em 1em;
+	width: calc(200px - 2em);
+ }
