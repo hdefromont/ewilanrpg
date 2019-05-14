@@ -1,0 +1,150 @@
+/*-----------------------------
+ * LISTE DE SUJETS
+ * ---------------------------- */
+.posts {
+	margin-bottom: 1.5em;
+}
+
+.posts-statistics-header, .posts-lastpost-header {
+	display: none;
+}
+
+.posts-main {
+	background-color: white;
+	border: 0.25em solid white;
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	padding: 1em;
+}
+
+.posts-section {
+	border-bottom: 1px solid lightgrey;
+	padding: 1em 0;
+}
+
+.posts-section:first-child {
+	padding-top: unset;
+}
+
+.posts-section:last-child {
+	border-bottom: unset;
+	padding-bottom: unset;
+}
+
+.posts-content {
+	display: flex;
+}
+
+.posts-description {
+	flex: 4;
+}
+
+.posts-statistics {
+	flex: 1;
+}
+
+.posts-lastpost {
+	flex: 2;
+	text-align: left;
+}
+
+.posts .avatar-default {
+	float: left;
+	height: 2.5em;
+	margin: auto;
+	width: 2.5em;
+}
+
+.forum-description h3, .posts-description h3 {
+	padding: 0 !important;
+}
+
+.posts-lastpost-author, .posts-lastpost-time {
+	display: block;
+}
+
+.posts-lastpost-inner {
+	margin-left: 3.5em;
+}
+
+.posts-statistics > span {
+	display: block;
+	text-align: center;
+}
+
+.posts-icon {
+	background-color: #B2B2B2;
+	border-radius: 16px;
+	color: #FFF;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 16px;
+	margin-top: 3px;
+	text-align: center;
+	width: 32px;
+}
+
+.posts-icon i {
+	font-size: 16px;
+	vertical-align: -4px;
+}
+
+.posts-icon.folder_announce > i, .posts-icon.folder_birthday > i, .posts-icon.folder_global > i, .posts-icon.folder_hot > i, .posts-icon.folder_locked > i, .posts-icon.folder_sticky > i {
+	display: none;
+}
+
+.posts-icon.folder_announce:after {
+	content: "announcement";
+}
+
+.posts-icon.folder_sticky:after {
+	content: "grade";
+}
+
+.posts-icon.folder_locked:after {
+	content: "lock";
+}
+
+.posts-icon.folder_hot:after {
+	content: "whatshot";
+}
+
+.posts-icon.folder_birthday:after {
+	content: "cake";
+}
+
+.posts-icon.folder_announce:after, .posts-icon.folder_birthday:after, .posts-icon.folder_global:after, .posts-icon.folder_hot:after, .posts-icon.folder_locked:after, .posts-icon.folder_sticky:after, .quick-reply-send, .select:after, .spoiler_title:after {
+	direction: ltr;
+	display: inline-block;
+	font-family: "Material Icons";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 1;
+	text-transform: none;
+	vertical-align: -4px;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+.participate-check {
+	line-height: 1;
+	position: absolute;
+	right: -11px;
+	top: -6px;
+}
+
+.participate-check i {
+	color: #3793ff;
+	cursor: default;
+	display: inline-block !important;
+	font-size: 16px;
+}
+
+.forum-lastpost-author i, .forum-lastpost-location i, .forum-lastpost-time i, .posts-lastpost-author i, .posts-lastpost-time i {
+	color: rgba(0,0,0,0.22);
+	font-size: 18px;
+	margin-right: 0.3em; 
+	vertical-align: -0.2em;
+}
