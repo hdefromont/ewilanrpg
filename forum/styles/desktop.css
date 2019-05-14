@@ -1,0 +1,49 @@
+/*-----------------------------
+ * IMPORT
+ * ---------------------------- */
+@import url("../toolbar.css");
+@import url("../main.css");
+
+@import url("../forum.css");
+@import url("../subject.css");
+@import url("../subject-list.css");
+@import url("../memberlist-grouplist.css");
+
+@import url("../fiche.css");
+
+/*-----------------------------
+ * FORUMS
+ * ---------------------------- */
+
+.forum {
+	display: inline-block;
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 49%;
+	height: 256px;
+}
+
+.forum:nth-child(even) h2, .forum:nth-child(even) h3 {
+	text-align: right;
+}
+
+.forum:nth-child(odd) h2, .forum:nth-child(odd) h3 {
+	text-align: left;
+}
+
+.forum:last-child:nth-child(odd) h2, .forum:last-child:nth-child(odd) h3 {
+	text-align: center;
+}
+
+.forum:nth-child(odd) {
+	margin-left: unset;
+}
+
+.forum:nth-child(even) {
+	margin-right: unset;
+}
+
+.forum:last-child:nth-child(odd) {
+	margin-right: unset;
+	margin-left: unset;
+}
