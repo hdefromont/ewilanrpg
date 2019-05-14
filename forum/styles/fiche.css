@@ -1,0 +1,287 @@
+/*-----------------------------
+ * FICHE
+ *----------------------------- */
+.sheet {
+	background-color: #efefef;
+	margin: auto;
+	max-width: 500px;
+}
+
+.sheet:after {
+	color: grey;
+	content: "@ Ewilan RPG";
+	display: block;
+	font-size: 0.75em;
+	font-style: italic;
+	text-align: center;
+}
+
+.sheet br {
+	display: none;
+}
+
+.sheet .block br {
+	display: initial;
+}
+
+.sheet .content {
+	margin: 0 1em;
+}
+
+.sheet .title {
+	color: #171717;
+	font: 5em "Zeyada";
+	padding: 0.1em;
+	line-height: 0.75em;
+	padding-top: 0.5em;
+	text-align: center;
+}
+
+.sheet .title-desc {
+	text-align: center;
+	color: #efefef;
+	background-color: #171717;
+	text-transform: uppercase;
+	margin: 1em;
+	margin-top: unset;
+	font-family: 'Dosis';
+}
+
+.sheet .image {
+	background-size: cover;
+	background-position: center;
+	border: 0.25em solid white;
+	height: 200px;
+	margin: 0 1em;
+}
+
+.sheet .block {
+	background-color: white;
+	margin: 1em 0;
+	padding: 1em;
+	text-align: justify;
+}
+
+.sheet .block.discreet {
+	background-color: transparent;
+	padding: unset;
+}
+
+.sheet .subtitle {
+	font: 2em "Dosis";
+	margin-bottom: 0.25em;
+}
+
+.sheet .content .subsubtitle {
+	font: 1.5em "Dosis";
+	margin-bottom: -0.675em;
+}
+
+.sheet .subtitle, .sheet .content .subsubtitle {
+	background-color: #171717;
+	color: #efefef;
+	font-variant: small-caps;
+	padding: 0.25em 0.5em;
+	text-align: center;
+}
+
+.sheet .block .subsubtitle {
+	background: unset;
+	color: inherit;
+	font: inherit;
+	font-variant: unset;
+	font-weight: bold;
+	text-align: inherit;
+	text-transform: uppercase;
+}
+
+.sheet .block .subsubtitle:before, .sheet .block .subsubtitle:after {
+	content: " - ";
+}
+
+.sheet .value {
+	background-color: lightgrey;
+	display: inline-block;
+	height: 19px;
+	font-size: smaller;
+	font-weight:bold;
+	line-height: 19px;
+	margin-right: 5px;
+	text-align: center;
+	vertical-align: bottom;
+	width: 35px;
+}
+
+.sheet .label {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.sheet .item:first-of-type:before {
+	content: " â‚ª ";
+}
+
+.sheet .item:after {
+	content: ", ";
+}
+
+.sheet .item:last-child:after {
+	content: "";
+}
+
+.sheet .list {
+	margin-bottom: 2px;
+	text-align: left;
+}
+
+.sheet .list.space {
+	margin-bottom: 20px;
+}
+
+.sheet .icon {
+	margin-right: 1em;
+}
+
+.sheet dl {
+	margin-bottom: 0.5em;
+}
+
+.sheet dt, dd {
+	display: inline;
+}
+
+.sheet dt {
+	text-transform: uppercase;
+}
+
+.sheet dt:after {
+	content: " -";
+}
+
+/*-----------------------------
+ * COULEURS
+ *----------------------------- */
+a[data-type="pnj"] {
+	color: dodgerblue !important;
+}
+
+a[data-type="invented"] {
+	color: grey !important;
+}
+
+a[data-status="free"] {
+	color: limegreen !important;
+}
+
+a[data-status="reserved"] {
+	color: lightsalmon !important;
+}
+
+a[data-status="taken"] {
+	color: tomato !important;
+}
+
+.value.taken {
+	background-color: tomato;
+	color: white;
+}
+
+.value.free {
+	background-color: limegreen;
+	color: white;
+}
+
+/*-----------------------------
+ * PERSONNAGE
+ *----------------------------- */
+.character #general .subtitle {
+	display: none;
+}
+
+.character #general .block {
+	display: inline-block;
+	height: calc(340px + 0.5em);
+	margin-top: 0.5em;
+	overflow: auto;
+	width: calc(300px - 3.5em);
+}
+
+.character .title-desc span:after {
+	content: " #";
+}
+
+.character .title-desc span:last-child:after {
+	content: "";
+}
+
+.character .avatar {
+	background-color: white;
+	border: 0.25em solid white;
+	box-sizing: content-box;
+	display: inline-block;
+	height: 340px;
+	margin: 0.5em 0;
+	margin-left: 1em;
+	text-align: center;
+	vertical-align: top;
+	width: 200px;
+}
+
+.character .avatar img {
+	max-height: 320px;
+	max-width: 200px;
+}
+
+.quote {
+	margin: 0.5em 1em;
+	text-align: center;
+	font-size: smaller;
+}
+
+.quote q {
+	font-style: italic;
+}
+
+.quote span {
+	font-weight:  bold;
+}
+
+.quote span:before {
+	content: " - ";
+	font-weight: normal;
+}
+
+/*-----------------------------
+ * COULEURS GROUPES
+ *----------------------------- */
+[data-group="alaviriens"] .subtitle, [data-group="alaviriens"] .title-desc {
+	background-color: #6270D6;
+}
+
+[data-group="dessinateurs"] .subtitle, [data-group="dessinateurs"] .title-desc {
+	background-color: #E94E77;
+}
+
+[data-group="alines"] .subtitle, [data-group="alines"] .title-desc {
+	background-color: #7FC7AF;
+}
+
+[data-group="frontaliers"] .subtitle, [data-group="frontaliers"] .title-desc {
+	background-color: #A6263A;
+}
+
+[data-group="etrangers"] .subtitle, [data-group="etrangers"] .title-desc {
+	background-color: #6F4A84;
+}
+
+[data-group="marchombres"] .subtitle, [data-group="marchombres"] .title-desc {
+	background-color: #56A3D3;
+}
+
+[data-group="mercenaires-du-chaos"] .subtitle, [data-group="mercenaires-du-chaos"] .title-desc {
+	background-color: #D68189;
+}
+
+[data-group="thuls"] .subtitle, [data-group="thuls"] .title-desc {
+	background-color: #C6A49A;
+}
