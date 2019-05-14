@@ -1,15 +1,15 @@
 /*-----------------------------
  * IMPORT
  * ---------------------------- */
-@import url("../toolbar.css");
-@import url("../main.css");
+@import url("./toolbar.css");
+@import url("./main.css");
 
-@import url("../forum.css");
-@import url("../subject.css");
-@import url("../subject-list.css");
-@import url("../memberlist-grouplist.css");
+@import url("./forum.css");
+@import url("./subject.css");
+@import url("./subject-list.css");
+@import url("./memberlist-grouplist.css");
 
-@import url("../fiche.css");
+@import url("./fiche.css");
 
 /*-----------------------------
  * FORUMS
