@@ -1,0 +1,414 @@
+header {
+	background-color: #263238;
+	color: #fff;
+	left: 0;
+	line-height: 64px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: keep-all;
+	z-index: 600;
+}
+
+/* Bouton menu */
+#main-menu-btn {
+	color: #FFF;
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 64px;
+	line-height: 64px;
+	margin: 0;
+	padding: 0 22px;
+	position: relative;
+	text-align: center;
+}
+
+#main-menu, #main-user-menu, #notif-menu {
+	background-color: rgba(30, 39, 44, 0.8);
+	bottom: 0;
+	box-shadow: 2px 0 2px 0 rgba(0,0,0,0.14), 3px 0 1px -2px rgba(0,0,0,0.2), 1px 0 5px 0 rgba(0,0,0,0.12);
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+	max-width: 350px;
+	padding: 1em;
+	padding-top: unset;
+	position: fixed;
+	text-align: left;
+	top: 64px;
+	z-index: 10;
+}
+
+#main-menu {
+	left: 0;
+}
+
+#main-user-menu, #notif-menu {
+	right: 0;
+}
+
+#main-menu.hidden, #main-user-menu.hidden, #notif-menu.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#main-menu.hidden {
+	transform: translate3d(-100%,0,0);
+}
+
+#main-user-menu.hidden, #notif-menu.hidden {
+	transform: translate3d(100%,0,0);
+}
+
+#dimmer.visible {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 5;
+}
+
+/* Logo */
+#logo {
+	color: #FFF;
+	float: left;
+	height: 64px;
+	line-height: 64px;
+	text-align: center;
+}
+
+#logo img {
+	max-height: 100%;
+	vertical-align: top;
+	width: auto;
+}
+
+/* Nom du Forum */
+#logo-text {
+	color: white;
+	display: block;
+	float: left;
+	font-family: 'Zeyada', cursive;
+	font-size: 2.5em;
+	height: 64px;
+	line-height: 2em;
+	max-width: 100%;
+	overflow: hidden;
+	padding-top: 0.25em;
+	padding-right: 1em;
+	text-align: center;
+	text-overflow: ellipsis;
+}
+
+#logo-text h1 {
+	color: white;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+}
+
+/* Notif & User */
+#header-notif, #header-mail {
+	color: #FFF;
+	display: block;
+	float: right;
+	font-size: 14px;
+	height: 64px;
+	padding: 0 22px;
+	position: relative;
+	width: auto;
+}
+
+#unread_notif, header .notif.unread {
+	background-color: #CD5C5C;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.44), 0 0 1px rgba(0,0,0,0.88);
+	color: white;
+	font-size: 11px;
+	height: 18px;
+	left: 35px;
+	line-height: 18px;
+	padding: 0 4px;
+	position: absolute;
+	text-align: center;
+	top: 15px
+}
+
+/* Navigation */
+#header-navigation {
+	float: left;
+	font-size: 14px;
+	list-style: none;
+	margin-left: 0
+}
+
+#header-navigation li {
+	float: left
+}
+
+#header-navigation a {
+	color: rgba(255,255,255,0.44);
+	display: block;
+	height: 64px;
+	padding: 0 22px
+}
+
+#header-navigation a.active {
+	border-bottom: 3px solid #F5F5F5;
+	color: #fff
+}
+
+#header-navigation a:hover {
+	background-color: rgba(0,0,0,0.22);
+	color: #fff
+}
+
+#header-navigation i + span {
+	margin-left: 11px;
+	padding-right: 4px
+}
+
+/* Discord Widget */
+#navigation-discord {
+	position: relative;
+}
+
+#navigation-discord img {
+	opacity: 0.47;
+	vertical-align: middle;
+}
+
+/*#navigation-discord span.notif.unread {
+	background-color: indianred;
+	border-radius: 25%;
+	color: white;
+	font-weight: bold;
+	padding: 0 1px;
+	text-align: center;
+	font-size: 9px;
+	height: 13px;
+	min-width: 13px;
+	display: block;
+	position: absolute;
+	line-height: 13px;
+	bottom: 15px;
+	right: 15px;
+}*/
+
+#navigation-discord:hover img {
+	opacity: 1;
+}
+
+/* Notifications */
+.main-menu-headline {
+	color: white;
+	font: 2em 'Zeyada';
+	height: 64px;
+	padding: 0.5em;
+	padding-right: calc(85px + 2em);
+	margin-bottom: 0.25em;
+	text-align: center;
+}
+
+#notif_list li {
+	display: block;
+	padding: 0.25em;
+	background-color: #263238;
+	color: #C7C7C7;
+}
+
+#notif_list li + li {
+	margin-top: .5em;
+}
+
+ul#notif_list {
+	flex: 1;
+	overflow: auto;
+	padding-right: 0.25em;
+}
+
+#notif-menu a {
+	color: white;
+	font-weight: bold;
+}
+
+#notif-menu li.unread .content:before {
+	background-color: #cd5c5c;
+	border-radius: 9px;
+	content: "";
+	display: block;
+	height: 50px;
+	left: 11px;
+	position: absolute;
+	top: 11px;
+	width: 4px;
+}
+
+#notif-menu .content {
+	position: relative;
+	padding: 1em 2em;
+}
+
+li#notif-view-all {
+	text-align: center;
+}
+
+/*-----------------------------
+ * USER AVATAR + PROFILE
+ * ---------------------------- */
+#header-user-perso {
+	float: right;
+	margin-right: 1em;
+	height: 64px;
+}
+
+#header-user-avatar {
+	height: 128px;
+	float: right;
+	position: relative;
+	width: 128px;
+}
+
+#header-user-avatar > div {
+	border-bottom: 0.3em solid rgba(38, 50, 56, 0.5);
+	border-left: 0.3em solid transparent;
+	border-right: 0.3em solid rgba(38, 50, 56, 0.75);
+	border-top: 0.3em solid transparent;
+	box-sizing: border-box;
+	height: 70%;
+	left: 15%;
+	overflow: hidden;
+	position: absolute;
+	top: 15%;
+	transform: rotate(45deg);
+	width: 70%;
+}
+
+#header-user-avatar > div > div {
+	height: 140%;
+	left: -20%;
+	position: absolute;
+	top: -20%;
+	transform: rotate(-45deg);
+	width: 140%;
+}
+
+#header-user-avatar img {
+	bottom: 0;
+	left: 0;
+	margin-top: -25%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+
+#header-user-name {
+	float: right;
+	font-family: 'Zeyada', cursive;
+	font-size: 1.75em;
+	line-height: 1.5em;
+	margin-left: 0.5em;
+}
+
+#header-user-name a {
+	color: white;
+	transition: .5s;
+}
+
+#header-user-name a:hover {
+	color: lightgrey;
+}
+
+#header-user-hello {
+	color: rgba(255,255,255,0.44);
+	font-family: monospace;
+	font-size: small;
+	height: 20px;
+	line-height: 3.25em;
+	margin-bottom: 0.75em;
+	margin-right: -2em;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+#header-user-logout {
+	background-color: rgba(0,0,0,0.5);
+	bottom: 0;
+	color: rgba(255,255,255,0.9);
+	display: block;
+	opacity: 0;
+	padding-top: 22px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	transition: .25s;
+	width: 100%;
+}
+
+#header-user-logout i.material-icons {
+	font-size: 36px;
+	line-height: 36px;
+}
+
+#header-user-avatar > div:hover #header-user-logout {
+	opacity: 1;
+}
+
+/*-----------------------------
+ * LOGIN
+ * ---------------------------- */
+#header-login {
+	display: flex;
+	float: right;
+	height: 64px;
+	padding: 15px 7.5px;
+}
+
+#header-login .form-control {
+	height: 34px;
+	width: 125px;
+	margin: 0 2.5px;
+	padding: 2.5px 7.5px;
+	font-size: small;
+}
+
+header .btn {
+	margin: 0 2.5px;
+}
+
+#header-register {
+	float: right;
+	margin: 15px;
+	margin-left: 7.5px;
+	height: 34px;
+}
+
+/*-----------------------------
+ * BARRE DE MENUS
+ * ---------------------------- */
+#header-navlinks {
+	box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.11), 0 0 0.25em rgba(0, 0, 0, 0.22);
+	background-color: white;
+	padding: 0.5em;
+}
+
+#header-navlinks li {
+	display: inline-block;
+}
+
+#header-navlinks li.rightside {
+	float: right;
+}
+
+a.mainmenu[href="/"], a.mainmenu[href="/search"], a.mainmenu[href="/profile?mode=editprofile"], a.mainmenu[href="/privmsg?folder=inbox"], a.mainmenu#logout {
+	display: none;
+}
