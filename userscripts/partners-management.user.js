@@ -15,11 +15,12 @@
 // ==/UserScript==
 
 (function() {
+
 	'use strict';
 
-  var partners = $(".posts-main").last().find(".posts-section");
+	var partners = $(".posts-main").last().find(".posts-section");
 	console.log(partners);
-	
+
 	$(partners).each(function() {
 		$(this).find("h3").after('<span class="topic-description">#Syane - Added by userscript.</span>');
 	});
