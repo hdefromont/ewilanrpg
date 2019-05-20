@@ -557,3 +557,16 @@ ul#profile-menu {
 	padding-right: 0.25em;
 	margin-bottom: 0.25em;
 }
+
+/* Other accounts */
+.post-author-info ul, .post-author-info li {
+	display: inline;
+}
+
+.post-author-info li:after {
+	content: ", ";
+}
+
+.post-author-info li:last-child:after {
+	content: "";
+}
