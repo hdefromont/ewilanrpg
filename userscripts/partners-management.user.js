@@ -15,14 +15,64 @@
 // ==/UserScript==
 
 (function() {
-
 	'use strict';
 
-	var partners = $(".posts-main").last().find(".posts-section");
-	console.log(partners);
+    var parsePartnersSheet = function(rows) {
+			var data = [];
 
-	$(partners).each(function() {
-		$(this).find("h3").after('<span class="topic-description">#Syane - Added by userscript.</span>');
-	});
+			rows.forEach(function(row) {
+				var cells = row.cells;
+				data[cells.sheet] = {
+                    name: cells.name,
+                    link: cells.link
+                };
+			});
+
+            console.log(data);
+			return data;
+		};
+
+    var getPostId = function(partner) {
+        var url = $(partner).find("h3").children("a").first().attr("href");
+        return Number.parseInt(url.split("/")[1].split("-")[0].replace("t", ""));
+    };
+
+    var addDescription = function(partnersList) {
+        var retrieveRSSData = function(partner, url) {
+            var settings = {
+                url: url + 'feed/',
+                success: function(data) {
+                    console.log(data);
+                    var items = $(data).find("item");
+                    console.log(items);
+                    var date = new Date($(items).first().children("pubDate").first().html());
+                    console.log("date: " + date);
+                    $(partner).find("h3").after('<span class="topic-description"><div class="btn" title="Date du 25ème dernier message"><i class="material-icons">clock</i> ' + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + '</div></span>');
+                }
+            };
+
+            $.post(settings);
+        };
+
+        var partners = $(".posts-main").last().find(".posts-section");
+        $(partners).each(function(index) {
+            var id = getPostId(this);
+            retrieveRSSData(this, partnersList[id].link);
+        });
+    };
+
+    $(document).sheetrock({
+        url: EwilanRPG.getSpreadSheet("partners"),
+        query: "select B, C, E order by D, B asc",
+        callback: function (error, options, response) {
+            console.log("loadPartnersList");
+            console.log(response);
+
+            var partnersList = parsePartnersSheet(response.rows);
+            addDescription(partnersList);
+        },
+        labels: ["name", "link", "sheet"],
+        reset: true
+    });
 
 })();
